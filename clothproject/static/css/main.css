@@ -1,0 +1,262 @@
+img{width: 100%;}
+
+/* navbar */
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.div_n1{
+    background-color: rgb(238, 240, 240); background-size: contain;
+    width: auto; height: 100px;
+    border: 1px solid transparent; 
+    box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+.ul_n1{
+  
+    display: flex;
+    position: absolute;
+    right: 5%;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.navbar-brand{
+    margin-left: 15px;
+   
+}
+.d-flex{
+    height: 40px;
+    width: 650px;
+    margin-top: 30px;
+    margin-left: 260px;
+}
+.nav-item{
+    margin-top: 15px;
+    font-weight: bolder;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+ul li::before{
+    content: "";
+    position: absolute;
+    inset: 30px;
+    box-shadow: 0 0 0 10px var(--clr),0 0 0 20px var(--bg) ,0 0 0 22px var(--clr);
+    transition: 0.5s;
+}
+ul li:hover::before{
+    inset: 15px;
+}
+ul li::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+ul li:hover::after{
+    inset: 0px;
+    transform: rotate(0deg);
+}
+ul li a{
+    position: relative;
+    text-decoration: none;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+ul li a i {
+    font-size: 2em;
+    transition: 0.5s;
+    color: var(--clr);
+    opacity: 1;
+}
+ul li:hover a i{
+    color: var(--clr);
+    transform: translateY(-40%);
+}
+ul li a span{
+    position: absolute;
+    font-family: sans-serif;
+    color: var(--clr);
+    opacity: 0;
+    transition: 0.5s;
+    transform: scale(0) translateY(200%);
+}
+ul li:hover a span{
+    opacity: 1;
+    transform: scale(1) translateY(100%);
+}
+ul li:hover a i,
+ul li a span{
+    filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr))
+    drop-shadow(0 0 60px var(--clr));
+}
+
+
+/* mens_wear */
+
+
+.div_m1{
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+.div_m2{
+    
+    margin: 40px;
+
+}
+
+.img_m1{width: 350px;
+    height: 400px;
+    border-radius: 9px;
+    background: #e0e0e0;
+    box-shadow:  -12px 12px 24px #bebebe,
+                 12px -12px 24px #ffffff;
+}
+
+
+/* homepage */
+
+
+.div_h1{
+
+    padding-left: 60px;
+}
+.div_h2{
+    position: absolute;
+    justify-content: center;
+    display: inline-block;
+    top: 50%;
+    left: 35%;
+   
+}
+.h_h1{
+    color: #ffffff;
+    margin-left: 200px;
+    font-size: 36px;
+}
+.h_h2{
+    color: #ffffff;
+    font-size: 100px;
+}
+.h_h3{
+    color: #ffffff;
+    margin-left: 90px;
+    font-size: 36px;
+}
+
+
+.div_h3 {
+    margin-top: 100px;
+    border-radius: 20px;
+    width: auto;
+    height: 150px;
+    background:linear-gradient(
+      108deg,
+      hsla(201.13, 100%, 45.1%, 0.53) 0%,
+      hsla(203.51, 79.6%, 49.9%, 0.532) 8.1%,
+      hsla(205.82, 73.9%, 53.93%, 0.538) 15.5%,
+      hsla(208.18, 65.81%, 57.23%, 0.547) 22.5%,
+      hsla(210.76, 54.94%, 59.84%, 0.558) 29%,
+      hsla(213.96, 41.47%, 61.78%, 0.571) 35.3%,
+      hsla(219.21, 25.84%, 63.06%, 0.586) 41.2%,
+      hsla(239.21, 8.78%, 63.7%, 0.602) 47.1%,
+      hsla(5.21, 8.78%, 63.7%, 0.618) 52.9%,
+      hsla(25.17, 25.84%, 63.06%, 0.634) 58.8%,
+      hsla(30.33, 41.47%, 61.78%, 0.649) 64.7%,
+      hsla(33.4, 54.94%, 59.84%, 0.662) 71%,
+      hsla(35.79, 65.81%, 57.23%, 0.673) 77.5%,
+      hsla(37.92, 73.9%, 53.93%, 0.682) 84.5%,
+      hsla(39.95, 79.6%, 49.9%, 0.688) 91.9%,
+      hsla(42, 100%, 45.1%, 0.69) 100%
+    );
+  };
+
+  .div_h4 
+  {
+    margin-top: 50px;
+    color: #ffffff;
+    
+    
+    
+  }
+.icon1{
+    font-size: 70px;
+    color: #ffffff;
+    padding-left: 110px;
+   
+    }
+.h_h4{
+    padding-top: 40px;
+    color: #ffffff;
+    padding-left: 100px;
+}
+.div_h5{
+    
+    margin-top: 100px;
+    
+    width: auto;
+    height: 500px;
+    background:linear-gradient(
+          to bottom,
+          hsl(33, 70%, 56%) 0%,
+          hsl(33, 70%, 58%) 8.1%,
+          hsl(31.66, 76.8%, 64.12%) 15.5%,
+          hsl(29.69, 71.32%, 64.26%) 22.5%,
+          hsl(26.69, 64.14%, 64.32%) 29%,
+          hsl(22.27, 55.59%, 64.24%) 35.3%,
+          hsl(16, 68%, 69%) 41.2%,
+          hsl(4.83, 35.95%, 63.51%) 47.1%,
+          hsl(348.38, 30.05%, 60.54%) 52.9%,
+          hsl(330.88, 26.75%, 56.31%) 58.8%,
+          hsl(313.36, 24.1%, 51.98%) 64.7%,
+          hsl(296.87, 25.18%, 48.34%) 71%,
+          hsl(286.17, 31.92%, 47.19%) 77.5%,
+          hsl(280.24, 37.95%, 46.08%) 84.5%,
+          hsl(277.19, 42.39%, 45.24%) 91.9%,
+          hsl(276.24, 44.1%, 44.9%) 100%
+        );
+}
+
+.img-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .img-container img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .img-container:hover img {
+    transform: scale(1.05); /* Adjust the scale factor as needed */
+  }
+
+  .hd_h1{
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 50px;
+}
+.hd_h2{
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.p_h1{
+    font-size:large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 45px;
+}
