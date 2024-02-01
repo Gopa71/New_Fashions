@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% load static %}
+{% block body %}
+<div class="container div_a mt-5">
+  <div class="row">
+    <div class="col-lg mt-3">
+      <form action="" method="post" enctype="multipart/form-data">          
+        {% csrf_token %} 
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="name" name="name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="Phone" name="phone">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="pincode" name="picode">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Address" name="address">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="District" name="district">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="landmark" name="landmark">
+          </div>
+        </div>
+        <div class="row mb-3">
+
+          <div class="col-sm-10 ps-5">
+            <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+            <button class="btn btn-primary justify-content-center mb-3" type="submit">Done</button>
+          </div>
+        </div>
+        
+      </form>
+</div>
+  </div>
+</div>
+  {% endblock%} 

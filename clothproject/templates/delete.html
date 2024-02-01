@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block body %}
+<form action="" method="post">
+                      
+    {% csrf_token %} 
+    <div class="div_d1">
+        <h2>Are You Complete Your Task!!</h2>   
+    <div class="div_d2">   
+    <button class="btn btn-primary justify-content-center mb-3" type="submit">Done</button>
+    </div>
+   </div>
+   
+
+</form>
+{% endblock %}

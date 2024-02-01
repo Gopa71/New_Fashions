@@ -2,65 +2,136 @@
  {% load static %}
 
  <div class="div_n1">
+ 
  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'cloth:home'%}"><img  src="{% static 'image/logo1.png' %}" class="w-100" height="80px"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-
-        <ul class="navbar-nav">
-
-
-          <li class="nav-item dropdown">
-            <a class="txt nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b> MENS</b>
-             
-            </a>
-            <ul class="dropdown-menu">
-              {% for link in links %}
-              <li><a class="dropdown-item" href="{{link.get_url}}">{{link.name}}</a></li>
-             {% endfor %}
-              
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="txt nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b> WOMENS</b>
-             
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href=""> Products1</a></li>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'cloth:home'%}"><img  src="{% static 'image/logo1.png' %}" class="w-100" height="80px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="txt nav-link " href="{% url 'cloth:home'%}" role="button" ><b> HOME</b>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
             
-              <li><a class="dropdown-item" href="">Products2</a></li>
-            </ul>
-          </li>
-          
-         
-        </ul>
-        
-      </div>
-    </div>
-    
-  </nav>
-  <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <a class="txt nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b> MENS</b>
+           
+          </a>
+          <ul class="dropdown-menu">
+            {% for link in links %}
+            <li><a class="dropdown-item" href="{{link.get_url}}">{{link.name}}</a></li>
+           {% endfor %}
+            
+          </ul>
+        </li>
 
-  </form>
-  <ul class="ul_n1">
-                      
-    <li style="--clr:#2483ff;">
-        <a href="#">
-            <i class="bi bi-bag-heart-fill"></i>
-            <span>Store</span>
-        </a>  
-    </li>
-     <li style="--clr:#2483ff;">
-        <a href="#">
-            <i class="bi bi-person-fill"></i>
-            <span>Profile</span>
-        </a>  
-    </li>
+        <li class="nav-item dropdown">
+          <a class="txt nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b> WOMENS</b>
+           
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'profile:profile' %}"> Products1</a></li>
+          
+            <li><a class="dropdown-item" href="">Products2</a></li>
+          </ul>
+        </li>
+         <form class="d-flex justify-content-center" role="search" action="{% url 'search:search' %}">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
     
- </ul>
- </div>
+      </form>
+      
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<ul class="ul_n1">
+                      
+  <li style="--clr:#2483ff;">
+    <a href="{% url 'cart:display' %}">
+        <i class="bi bi-bag-heart-fill"></i>
+        <span>Store</span>  
+    </a>  
+</li>
+<li class="nav-item">
+  {% if user.is_authenticated %}
+
+<li class="nav-item dropdown">
+  <a class="txt nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b> {{user}}</b>
+   
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{% url 'profile:profile' %}"><i class="bi bi-person-fill"></i>My Profile</a></li>
+  
+    <li><a href="{% url 'reg:logout' %}" >Logout</a></li>
+  </ul>
+</li>
+
+  <div class="div_n3 ">
+   
+  </div> 
+  {% else %}
+  <div class="div_n2 ">
+  <a href="{% url 'reg:register' %}" >REGISTER/</a>  
+  <a href="{% url 'reg:login' %}" >LOGIN</a>
+</div>
+  {% endif %}  
+        
+</li>
+</ul>
+ </div> 
+ 
+
+
+{% comment %} <div class="div_n4">
+
+ <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+
+<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+</div> {% endcomment %}

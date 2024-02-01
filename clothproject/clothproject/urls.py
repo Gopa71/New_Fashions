@@ -21,7 +21,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('cloth.urls'))
+    path('',include('cloth.urls')),
+    path('credential/',include('credential.urls')),
+    path('cart/',include('cartapp.urls')),
+    path('search/',include('searchApp.urls')),
+    path('profile/',include('profileapp.urls')),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

@@ -20,3 +20,5 @@ def mens(req,c_slug=None):
 def details(req,id):
      data=Product.objects.get(id=id)
      return render(req,'details.html',{'data':data})
+
+

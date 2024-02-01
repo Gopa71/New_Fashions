@@ -1,0 +1,40 @@
+{% extends 'index.html'%}
+
+{% load static %}
+
+{% block body%}
+
+
+<div class="container">
+    <div class="row">
+        <p class="text-center">Your Search Product is :<b>{{quary}}</b></p>
+    </div>
+</div>
+<div class="container">
+   <div class="row">
+      {% for i in products %}
+      <div class="col-lg-4 col-md-6 col-sm ">
+      
+         <a href="{% url 'cloth:details' i.id %}"><img src="{{i.photo.url}}" class="img_m1"></a> 
+      
+        <div class="div_m2">
+          <p>{{i.brand}}</p>
+          <h5>{{i.name}}</h5>
+          <p>{{i.rating}}</p>
+          <p>{{i.price}}</p>
+        </div>
+      </div>
+      
+      {% empty %}
+      <div class="container">
+        <div class="row">
+            <p class="text-center">0 Result found</p>
+        </div>
+    </div>
+      {% endfor %}
+    
+  </div>
+</div>
+ 
+
+{% endblock %}
