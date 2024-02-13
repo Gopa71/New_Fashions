@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from cloth.models import Product
 from .models import Cart,Order
+from profileapp.models import Profile
 # Create your views here.
 def cart(req,id):
      product=Product.objects.get(id=id)
@@ -30,13 +31,13 @@ def cart(req,id):
      return redirect(('cart:display'))
      
 def display(req):
-    
+    value=Profile.objects.all()
     user_id = req.session["user"]
     print('user_is',user_id)
     data=Cart.objects.all().filter(user_id=user_id)
     total_amount=sum(i.product.price * i.quantity  for i in data)
     print(data)
-    return render(req,'cart.html', {'data': data,'total_amount':total_amount})   
+    return render(req,'cart.html', {'data': data,'total_amount':total_amount,'value':value})   
 
 
 def delete(req,id):

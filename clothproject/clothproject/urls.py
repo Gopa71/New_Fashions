@@ -26,6 +26,7 @@ urlpatterns = [
     path('cart/',include('cartapp.urls')),
     path('search/',include('searchApp.urls')),
     path('profile/',include('profileapp.urls')),
+    
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

@@ -2,12 +2,21 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
+
+class Gender(models.Model):
+    name=models.CharField(max_length=250,unique=True)
+    slug=models.SlugField(max_length=250,unique=True)
+    def __str__(self):
+        
+        return '{}'.format(self.name)
+    
 class Category(models.Model):
     name=models.CharField(max_length=250,unique=True)
     slug=models.SlugField(max_length=250,unique=True)
+    gender=models.ForeignKey(Gender, on_delete=models.CASCADE)
     desc=models.TextField(blank=True)
     banner=models.ImageField(upload_to='banner',blank=True)
-
+    
     class Meta:
         ordering=('name',)
         verbose_name='Category'
@@ -42,3 +51,4 @@ class Product(models.Model):
     def __str__(self):
         
         return '{}'.format(self.name)
+    

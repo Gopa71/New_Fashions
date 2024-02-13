@@ -1,5 +1,11 @@
-from .models import Category
+from .models import Category,Gender
 
-def menu_link(req):
-    links=Category.objects.all()
-    return dict(links=links)
+
+def men(req):
+    men=Gender.objects.get(name='men') 
+    men=Category.objects.all().filter(gender=men)
+    return dict(men=men)
+def women(req):
+    women=Gender.objects.get(name='women')
+    women=Category.objects.all().filter(gender=women)
+    return dict(women=women) 

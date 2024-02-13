@@ -3,7 +3,7 @@
 
  <div class="div_n1">
  
- <nav class="navbar navbar-expand-lg bg-light">
+ <nav class="navbar navbar-expand-lg bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'cloth:home'%}"><img  src="{% static 'image/logo1.png' %}" class="w-100" height="80px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
            
           </a>
           <ul class="dropdown-menu">
-            {% for link in links %}
+            {% for link in men %}
             <li><a class="dropdown-item" href="{{link.get_url}}">{{link.name}}</a></li>
            {% endfor %}
             
@@ -33,21 +33,24 @@
            
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'profile:profile' %}"> Products1</a></li>
-          
-            <li><a class="dropdown-item" href="">Products2</a></li>
+            {% for i in women %}
+            <li><a class="dropdown-item" href="{{i.get_url}}">{{i.name}}</a></li>
+           {% endfor %}
+            
           </ul>
         </li>
+        <div class="search_div">
          <form class="d-flex justify-content-center" role="search" action="{% url 'search:search' %}">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
     
       </form>
+    </div>
       
       </ul>
       
     </div>
   </div>
-</nav>
+
 <ul class="ul_n1">
                       
   <li style="--clr:#2483ff;">
@@ -84,7 +87,7 @@
 </ul>
  </div> 
  
-
+</nav>
 
 {% comment %} <div class="div_n4">
 
