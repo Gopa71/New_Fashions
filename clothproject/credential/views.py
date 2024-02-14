@@ -12,8 +12,7 @@ def register(req):
         email = req.POST['email']
         password = req.POST['password']
         compassword = req.POST['c_password']
-        account_type = req.POST['account_type']
-
+         
        
         if password == compassword:
             if User.objects.filter(username=username).exists():
@@ -24,7 +23,7 @@ def register(req):
                 return redirect('reg:register')
             
             else:
-              user=User.objects.create_user(username=username,first_name=first_name,last_name=last_name,email=email,password=password,is_staff=account_type)
+              user=User.objects.create_user(username=username,first_name=first_name,last_name=last_name,email=email,password=password)
               user.save()
               return redirect('reg:login')
 
