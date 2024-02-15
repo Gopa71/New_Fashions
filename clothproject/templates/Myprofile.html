@@ -37,8 +37,8 @@
           <div class="col-lg-5 border m-2 text-center">
               <h4>Coupons</h4>
           </div>
-          <a href="{% url 'profile:address' %}"<div class="col-lg-5 border m-2 text-center">
-              <h4>Help center</h4></a>
+         <div class="col-lg-5 border m-2 text-center">
+              <h4>Help center</h4>
           </div>
       </div>
   </div>
@@ -46,11 +46,11 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-6"><h3 class="text-white">
-                  <i>ADDRESS</i>
+                  
                  </h3></div>
-              <div class="col-lg-6 text-end ">
-                   class="btn text-white ">
-                     <h3 role="button"> Add Address</h3>
+              <div class="col-lg-6 text-end mb-2">
+                <a href="{% url 'profile:address' %}"><button class="btn btn-dark text-light ">
+                     <h3 role="button"> Add Address</h3></a>
                   
               </div>
           </div>    
@@ -66,8 +66,8 @@
       <h4>{{i.name}}</h4>
       <h5>House name : {{ i.address }}</h5>
     <h5>Pincode    : {{ i.picode }}</h5>
-    <h5 class="col-lg-6">City : {{ i.city }}</h5>
-    <h5>Country : {{ i.country }}</h5>
+    <h5 class="col-lg-6">Landmark : {{ i.landmark}}</h5>
+    <h5> District: {{ i.district }}</h5>
     <h5>Phone No : {{ i.phone }}</h5>
     <div class="mb-5 mt-2">
     <a href="#" class="btn btn-outline-dark me-4">EDIT</a>
